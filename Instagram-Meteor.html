@@ -1,0 +1,29 @@
+<head>
+  <title>Instagram-Meteor</title>
+</head>
+
+<body>
+	{{> myForm}}
+
+	{{> photosList}}
+</body>
+
+<template name="myForm">
+	<input type="file" name="addPhoto" class="myFileInput">
+</template>
+
+<template name="imageList">
+	<ul>
+		{{#each images}}
+		<li>
+			{{> image}}
+		</li>
+		{{/each}}
+	</ul>
+</template>
+
+<template name="image">
+	<a href="{{url}}" target="_blank" class="thumbnail">
+		<img src="{{url}}" />
+	</a>
+</template>
