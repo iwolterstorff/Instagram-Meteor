@@ -1,15 +1,38 @@
 <template name="imageList">
 	<ul>
 		{{#each images}}
-		<li>
-			{{> image}}
-		</li>
+		{{> image}}
+		<!-- 		{{> imageInfo}} -->
 		{{/each}}
 	</ul>
 </template>
 
 <template name="image">
-	<a href="{{url}}" target="_blank" class="thumbnail">
-		<img src="{{url}}" />
-	</a>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="thumbnail">
+				<a href="{{url}}" target="_blank">
+					<img src="{{url}}" />
+				</a>
+				<div class="image-info">
+					Posted by: 
+					<a class="user-link" href="{{pathFor route='userPhotos' username=this.username}}">
+						<i class="fa fa-user">&nbsp;{{username}}</i>
+					</a>
+					Posted on: {{postDate}}
+					<hr>
+					<p>{{caption}}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<hr>
 </template>
+
+<!-- <template name="imageInfo">
+	<div class="row">
+		<div class="col-md-12">
+			<i class="fa fa-user">{{username}}</i>
+		</div>
+	</div>
+</template> -->

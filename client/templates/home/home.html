@@ -1,9 +1,14 @@
 <template name="home">
-	{{> myForm}}
+
+	<h1>This is Winstagram</h1>
+	<h3>It's called that because I added 'W' from my last name and because winning is fun</h3>
+	{{#if isNotLoggedIn}}
+		{{> notLoggedIn}}
+	{{/if}}
 
 	{{> imageList}}
 </template>
 
-<template name="myForm">
-	<input type="file" name="addPhoto" class="myFileInput">
+<template name="notLoggedIn">
+	<p>You are not logged in.</p>
 </template>
